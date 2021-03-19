@@ -45,3 +45,14 @@ cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 ### Data Type
 `#include<bitset>`
 > Refer: [bitset 整理](https://edisonx.pixnet.net/blog/post/34045379)
+
+### 步驟
+
+1. 
+2. 
+3. 
+4. 
+5. 
+6. 
+7. 
+8. 
