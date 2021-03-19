@@ -17,6 +17,22 @@ Each character is interpreted as its ASCII code, e.g., ‘A’= 41 (Hex)
 
 > Test sample Reference: [The DES Algorithm Illustrated - by J. Orlin Grabbe](http://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm?fbclid=IwAR1q6qC4QxhGxUqaT1eFXldFMpauoQMuCbMm3E1RLsXxNTvi4PiE_evVA9A)
 
+> **Debugging**:
+> 
+> 1. 檢查 binary 有沒有轉換正確。
+> ```python
+> >>> int('01100001', 2)
+> 97
+> ```
+> 
+> 2. 批量檢查 
+> ```python
+> binStr = '0110000101100010011000110110010001100101011001100110011101101000'
+> originInt = [int(bin, 2) for bin in [binStr[x:x+8] for x in range(0,len(binStr), 8)]]
+> 
+> >>> originInt
+> [97, 98, 99, 100, 101, 102, 103, 104]
+> ```
 ## Other Request
 **Language**: 
 Use C or C++.
@@ -55,9 +71,8 @@ cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 * 每個字元用 8 個 bits 表示，空位數補 0
 * **`plainText`**: size ８ 的字串 --> (decimal ASCII) --> Hex ASCII <string>[16] -->  bitset<64> (define by <bitset>) 
 * **`key`**: size 8 的字串 --> （同上）--> bitset<64>
-* 
 
-* 
+ 
 > 可能要考慮的防呆：`plaintext` 和 `key` 的 Hex 字串長不及 16 或大於 16。
 > 若有這樣的 Case，考慮取 `plaintext` repeat ，補至 16 的倍數。 
 
@@ -78,6 +93,8 @@ cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
          7   62    54   46    38    30   22
         14    6    61   53    45    37   29
         21   13     5   28    20    12    4
+
+
 ##### 2-2. 把 `Key+` 從正中間切成左右兩半：`C_0`, `D_0` (各 28 bits）
 
 ##### 2-3. 計算 `C_1`, `D_1` ~ `C_16`, `D_16` (56 bits)
