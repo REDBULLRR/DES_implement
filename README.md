@@ -48,13 +48,16 @@ cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
 
 ### 步驟
 
-#### 1. 讀入 plaintext, key
-
+#### 1. 讀入 plaintext, key，將它倆轉換為二進位
 > 假設： `plaintext`, `key` 皆為 size=16 的 string。
+> 
 
+* 每個字元用 8 個 bits 表示，空位數補 0
 * **`plainText`**: size ８ 的字串 --> (decimal ASCII) --> Hex ASCII <string>[16] -->  bitset<64> (define by <bitset>) 
 * **`key`**: size 8 的字串 --> （同上）--> bitset<64>
+* 
 
+* 
 > 可能要考慮的防呆：`plaintext` 和 `key` 的 Hex 字串長不及 16 或大於 16。
 > 若有這樣的 Case，考慮取 `plaintext` repeat ，補至 16 的倍數。 
 
