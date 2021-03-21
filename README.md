@@ -159,12 +159,14 @@ D_n = nleftShift( D_{n-1} , IterationNum)
  
  to the `plaintext`, s.t.
 * `plaintext_IPed = apply_IP(plaintext)`
+* 表 IP 會把明文 rearrange: 第一個 bit 變成原本的第 58 個 bit，以此類推。
 
 ##### 3-2. 把 `plaintext_IPed` 切成兩半：`L_0`,`R_0` (各 32 bits）
-##### 3-3. 執行 F function
+##### 3-3. 依序算出 `L_1`, `R_1` ~ `L_16`, `R_16`
 * `L_n = R_{n-1}`
-* `R_n = L_{n-1} + f(R_{n-1},Kn)`
+* `R_n = L_{n-1} + f(R_{n-1},Kn)`，其中 f()是 F function
 * 此處 `+` 表示 ＸＯＲ運算
+
 
 #### 4. 
 #### 5. 
