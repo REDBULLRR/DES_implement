@@ -261,12 +261,26 @@ D_n = nleftShift( D_{n-1} , IterationNum)
 * `L_n = R_{n-1}`
 * `R_n = L_{n-1} + f(R_{n-1},Kn)`，其中 f()是 F function
 * 此處 `+` 表示 ＸＯＲ運算
+* 不必留存每一個 L 和 R，只要能得到 `L_16` 和 `R_16` 就萬萬歲了
 
+#### 6. 算出密文
+##### 6-1. 對 `R_16 L_16` 做 Inverse Initial Permutation
+* 64-bits  --> 64-bits
 
-#### 6. 
-#### 7. 
-#### 8. 
-#### 9. 
+           Inverse Initial Permutation
+    40     8   48    16    56   24    64   32
+    39     7   47    15    55   23    63   31
+    38     6   46    14    54   22    62   30
+    37     5   45    13    53   21    61   29
+    36     4   44    12    52   20    60   28
+    35     3   43    11    51   19    59   27
+    34     2   42    10    50   18    58   26
+    33     1   41     9    49   17    57   25           
+
+* 可以得到一個 64-bits 的二進位 ciphertext
+* 把 ciphertext 按 bytes 轉為 10 進位，變換回字元型態
+* 搞定。
+
 
 > Steps Reference: [The DES Algorithm Illustrated - by J. Orlin Grabbe](http://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm?fbclid=IwAR1q6qC4QxhGxUqaT1eFXldFMpauoQMuCbMm3E1RLsXxNTvi4PiE_evVA9A)
 > Coding Reference:
