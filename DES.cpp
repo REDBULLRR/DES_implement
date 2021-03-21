@@ -10,10 +10,15 @@ const int N_TEST = 5;       // 測資數
 const int BYTE_SIZE = 8;    // 單個 byte 擁有的 bit 數
 const int MAX_STR_SIZE = 8; // str_to_binary(string) 一次能轉換的最大 string 長度
 
+
+
 string DES(string plaintext, string key);
 // 對輸入的明文（size:8）和金鑰（size：8）執行 DES 加密，回傳密文
 
-bitset<56> applying_PC_1(bitset<64> originKey);
+bitset<64> apply_IP(bitset<64> origin_plaintext);
+// 對原始 plaintext (64-bits）套用 IP 的轉換，得 IP_plaintext（64 bits）
+
+bitset<56> apply_PC_1(bitset<64> originKey);
 // 對原始 Key (64-bits）套用 PC-1 的轉換，得 Key+（56 bits）
 
 bitset<64> str_to_binary(string aStr);
@@ -74,7 +79,7 @@ string DES(string plaintext, string key)
  
 
 // 對原始 Key (64-bits）套用 PC-1 的轉換，得 Key+（56 bits）
-bitset<56> applying_PC_1(bitset<64> originKey)
+bitset<56> apply_PC_1(bitset<64> originKey)
 {
   //cout <<"originKey="<<originKey<<endl<<endl;
 
@@ -154,3 +159,27 @@ bitset<64> str_to_binary(string aStr)
 }
 
 
+
+bitset<64> apply_IP(bitset<64> origin_plaintext)
+{
+  int IP[64]={58, 50, 42, 34, 26, 18, 10, 2, 60, 52, 44, 36, 28, 20, 12, 4, 62, 54, 46, 38, 30, 22, 14, 6, 64, 56, 48, 40, 32, 24, 16, 8, 57, 49, 41, 33, 25, 17, 9, 1, 59, 51, 43, 35, 27, 19, 11, 3, 61, 53, 45, 37, 29, 21, 13, 5, 63, 55, 47, 39, 31, 23, 15, 7};
+
+  bitset<64> IP_plaintext;
+  int newIdx;
+
+  // Create the 56-bits newKey 
+  for(int i=63; i>=0; i--)
+  {
+    //cout <<"i="<<i<<endl;
+    newIdx = 64-IP[64-i];
+    IP_plaintext[i] = origin_plaintext[newIdx];
+
+    //test
+    /*cout <<"newIdx="<<newIdx<<", originKey[newIdx]="<<originKey[newIdx]<<", PC_1[63-i]="<<IP[63-i]<<endl<<IP_plaintext<<endl<<endl;
+     if(i==50) break;
+     */
+  }
+    
+  cout <<"IP_plaintext="<<IP_plaintext<<endl;
+  return IP_plaintext;
+}
