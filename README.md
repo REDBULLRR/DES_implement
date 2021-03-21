@@ -127,6 +127,8 @@ D_n = nleftShift( D_{n-1} , IterationNum)
                          14          2
                          15          2 // C_14 (D_14) --Do 2 Left shift--> C_15 (D_15)
                          16          1 // C_15 (D_15) --Do 1 Left shift--> C_16 (D_16)
+* Note: 注意  `#include<bitset>` 內建的 `<<` shift 不會把最左的 1 移到最右。
+    * Ex: 0110  ==[shift 2]==> 1000 
 
 ##### 2-4. 計算 `K_1`~`K16` (48 bits)
 
