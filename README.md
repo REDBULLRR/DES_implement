@@ -1,6 +1,7 @@
 # DES_implement
 DES (Data Encryption Standard) encryption and decryption implement.
 
+線上編譯站：[Replit - DES](https://replit.com/@REDBULLRR/DES#DES.cpp)
 
 ## Input format
 An ordered pair of keys and plaintexts in characters, such as “12345678 Advanced”. 
