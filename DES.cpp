@@ -11,6 +11,7 @@ const int BYTE_SIZE = 8;    // 單個 byte 擁有的 bit 數
 const int MAX_STR_SIZE = 8; // str_to_binary(string) 一次能轉換的最大 string 長度
 
 
+// ======== Sub Functions ===========
 
 string DES(string plaintext, string key);
 // 對輸入的明文（size:8）和金鑰（size：8）執行 DES 加密，回傳密文
