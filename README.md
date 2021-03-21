@@ -283,5 +283,10 @@ D_n = nleftShift( D_{n-1} , IterationNum)
 
 
 > Steps Reference: [The DES Algorithm Illustrated - by J. Orlin Grabbe](http://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm?fbclid=IwAR1q6qC4QxhGxUqaT1eFXldFMpauoQMuCbMm3E1RLsXxNTvi4PiE_evVA9A)
+
 > Coding Reference:
 > [StackOverflow - convert bitset to int in c++](https://stackoverflow.com/questions/19583720/convert-bitset-to-int-in-c)
+> 
+> [CPP - std::bitset operators](https://www.cplusplus.com/reference/bitset/bitset/operators/)
+>  
+> 
