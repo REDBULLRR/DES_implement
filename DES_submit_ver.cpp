@@ -42,32 +42,40 @@ bitset<4> intTo4Bits(int input);
 // ===== Main Function =====
 int main()
 {
-    ifstream inFile;
+    //ifstream inFile;
     ofstream outFile;
-    inFile.open("in.txt");
+    //inFile.open("in.txt");
     outFile.open("out.txt");
 
-    string plaintext, key;
+    string plaintext1="Advanced", key1="12345678",
+    plaintext2="SK888888", key2="87654321", 
+    plaintext3="CSisHard", key3="meowmeow",
+    plaintext4="Go_Study", key4="45104711",
+    plaintext5="ZaWaRuDO", key5="yeahyeah";
+
     int n=N;// Encrypt repeating times
 
     // timing
     clock_t start, end;
     double cpu_time_used;
     start = clock();
-    while(n--)
-    {
-        //cout <<"Enter plaintext:";
-        inFile >>plaintext;
-        //cout <<"Enter key:";
-        inFile >>key;
-        
-        DES(plaintext, key, outFile);
-    }
-    end = clock();
-    cpu_time_used = static_cast<double>(end-start)/CLOCKS_PER_SEC/N;
-    outFile<<"Average CPU time used: "<<cpu_time_used<<endl;
 
-    inFile.close();
+        //cout <<"Enter plaintext:";
+        //inFile >>plaintext;
+        //cout <<"Enter key:";
+        //inFile >>key;
+        
+        DES(plaintext1, key1, outFile);
+        DES(plaintext2, key2, outFile);
+        DES(plaintext3, key3, outFile);
+        DES(plaintext4, key4, outFile);
+        DES(plaintext5, key5, outFile);
+
+    end = clock();
+    cpu_time_used = static_cast<double>(end-start)*1000/CLOCKS_PER_SEC/N;
+    outFile<<"Average CPU time used: "<<cpu_time_used<<" ms"<<endl;
+
+    //inFile.close();
     outFile.close();
 
     return 0;
