@@ -1,4 +1,6 @@
 # DES_implement
+密碼學 HW2。
+
 DES (Data Encryption Standard) encryption and decryption implement.
 
 線上編譯站：[Replit - DES](https://replit.com/@REDBULLRR/DES#DES.cpp)
