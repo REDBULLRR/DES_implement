@@ -1,14 +1,20 @@
 # DES_implement
-密碼學 HW2。
+Cryptology HW2.
 
 DES (Data Encryption Standard) encryption and decryption implement.
 
-線上編譯站：[Replit - DES](https://replit.com/@REDBULLRR/DES#DES.cpp)
+Online coding：
+
+[Replit - DES](https://replit.com/@REDBULLRR/DES#DES.cpp)
+
+Language: Traditional Chinese and English.
 
 ## Input format
 An ordered pair of keys and plaintexts in characters, such as “12345678 Advanced”. 
 
 Each character is interpreted as its ASCII code, e.g., ‘A’= 41 (Hex)
+
+
 ## Output format
 16 hex characters, such as AE184796707E59FB,which is the ciphertext of the above key and plaintext.
 
@@ -18,7 +24,9 @@ Each character is interpreted as its ASCII code, e.g., ‘A’= 41 (Hex)
 
 12345678 Advanced AE184796707E59FB
 
-> Test sample Reference: [The DES Algorithm Illustrated - by J. Orlin Grabbe](http://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm?fbclid=IwAR1q6qC4QxhGxUqaT1eFXldFMpauoQMuCbMm3E1RLsXxNTvi4PiE_evVA9A)
+> Test sample Reference: 
+> 
+> [The DES Algorithm Illustrated - by J. Orlin Grabbe](http://page.math.tu-berlin.de/~kant/teaching/hess/krypto-ws2006/des.htm?fbclid=IwAR1q6qC4QxhGxUqaT1eFXldFMpauoQMuCbMm3E1RLsXxNTvi4PiE_evVA9A)
 
 > **Debugging**:
 > 
